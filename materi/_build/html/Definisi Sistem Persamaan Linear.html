@@ -1,0 +1,714 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Definisi Sistem Persamaan Linear &#8212; KAL</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Definisi Sistem Persamaan Linear';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Komputasi Aljabar Linear" href="intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="KAL - Home"/>
+    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt="KAL - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Komputasi Aljabar Linear
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Definisi Sistem Persamaan Linear</a></li>
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FDefinisi Sistem Persamaan Linear.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Definisi Sistem Persamaan Linear.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Definisi Sistem Persamaan Linear</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Definisi Sistem Persamaan Linear</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#jenis-sistem-persamaan-linear">Jenis Sistem Persamaan Linear</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#persamaan-linear-satu-variabel">1. Persamaan Linear Satu variabel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#persamaan-linear-dua-variabel">2. Persamaan Linear Dua variabel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#persamaan-linear-tiga-variabel">3. Persamaan Linear Tiga variabel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ciri-ciri-sistem-persamaan-linear">Ciri-Ciri Sistem Persamaan Linear</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#jenis-solusi-persamaan-linear">Jenis Solusi Persamaan Linear</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#satu-solusi">Satu solusi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#banyak-solusi">Banyak solusi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi-tak-terhingga">Solusi tak terhingga</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metode-penyelesain-persamaan-linear">Metode Penyelesain Persamaan Linear</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminasi">Eliminasi</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminasi-gaus">Eliminasi Gaus</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi-grafik">Solusi Grafik</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="definisi-sistem-persamaan-linear">
+<h1>Definisi Sistem Persamaan Linear<a class="headerlink" href="#definisi-sistem-persamaan-linear" title="Link to this heading">#</a></h1>
+<p>Sekumpulan persamaan linear yang terdiri dari beberapa variabel. yaitu terdiri dari tiga persamaan dengan tiga variabel x, y,dan z.Dalam persamaan linear,variabel hanya memiliki pangkat 1,dan tidak ada variabel yang dikalikan dengan variabel lain atau dipangkatkan.Bentuk umum sistem persamaan linear ialah:
+<strong>Ax+By=C</strong>
+3x+2y=5
+x-y=1
+x dan y yang memenuhi kedua persamaan secara bersamaan dimana berpangkat satu.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="jenis-sistem-persamaan-linear">
+<h1>Jenis Sistem Persamaan Linear<a class="headerlink" href="#jenis-sistem-persamaan-linear" title="Link to this heading">#</a></h1>
+<section id="persamaan-linear-satu-variabel">
+<h2>1. Persamaan Linear Satu variabel<a class="headerlink" href="#persamaan-linear-satu-variabel" title="Link to this heading">#</a></h2>
+<p>persamaan linear yang hanya memiliki satu variabel saja memiliki pangkat satu.</p>
+<ul>
+<li><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    Contoh: 2x+7 = 3x−5
+    Penyelesaian: 2x−3x = −5−7
+                    −x  = −12
+                     x  = 12
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="persamaan-linear-dua-variabel">
+<h2>2. Persamaan Linear Dua variabel<a class="headerlink" href="#persamaan-linear-dua-variabel" title="Link to this heading">#</a></h2>
+<p>persamaan linear yang memiliki dua varibel, dengan pangkat satu.</p>
+<ul>
+<li><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    contoh: Pertama = x + 3y = 15
+            Kedua = 3x + 6y = 30
+            X + 3y = 15 &gt; X = -3y + 15
+            3x + 6y = 30
+            -9y + 45 + 6y = 30
+            -3y = 30 45
+            -3y = -15
+            y = 5
+   dari persamaan pertama: + 3y = 15
+                          x + 3 (5) = 15
+                          x + 15 = 15
+                          x = 0 
+   persamaan yang kedua: 3x + 6y = 30
+                         3x + 6(5)= 30 
+                         3x + 30 = 30
+                         3x = 0
+                         x = 0
+  Maka nilai himpunannya jadi, = { 0 , 5 }
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="persamaan-linear-tiga-variabel">
+<h2>3. Persamaan Linear Tiga variabel<a class="headerlink" href="#persamaan-linear-tiga-variabel" title="Link to this heading">#</a></h2>
+<p>persamaan linear yang memiliki tiga varibel yang saling berhubungan.</p>
+<ul>
+<li><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    contoh:x + 3y + 2z = 16, 2x + 4y – 2z = 12,     
+    dan x + y + 4z = 20. Tentukan nilai x, y, z
+    Substitusi
+    x + y + 4z = 20
+    x = 20 – y – 4z
+    x + 3y + 2z = 16
+    (20 – y – 4z) + 3y + 2z = 16
+    2y – 2z + 20 = 16
+    2y – 2z = 16 – 20
+    2y – 2z = –4
+    y – z = –2
+    2x + 4y – 2z = 12
+    2(20 – y – 4z) + 4y – 2z = 12
+    40 – 2y – 8z + 4y – 2z = 12
+    2y – 10z + 40 = 12
+    2y – 10z = 12 – 40
+    2y – 10z = –28
+    Eliminasi
+    y – z = –2 |×2| 2y – 2z = –4
+    2y – 10z = –28 |×1| 2y – 10z = –28
+    (2y – 2z = –4) – (2y – 10z = –28) = (z = 3)
+    y – z = –2 |×10|10y – 10z = –20
+    2y – 10z = –28 |×1| 2y – 10z = –28
+    (10y – 10z = –20) -  (2y – 10z = –28) = (y = 1)
+   Substitusi
+    x + 3y + 2z = 16
+    x + 3(1) + 2(3) = 16
+    x + 3 + 6 = 16
+    x + 9 = 16
+    x = 16 – 9
+    x = 7
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="ciri-ciri-sistem-persamaan-linear">
+<h2>Ciri-Ciri Sistem Persamaan Linear<a class="headerlink" href="#ciri-ciri-sistem-persamaan-linear" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Tidak memiliki perkalian variabel</p></li>
+<li><p>Terdiri dari dua ruas yang dihubungkan dengan tanda sama dengan (=)</p></li>
+<li><p>Membentuk garis lurus</p></li>
+<li><p>Persamaan linear akan memiliki pangkat satu</p></li>
+</ol>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="jenis-solusi-persamaan-linear">
+<h1>Jenis Solusi Persamaan Linear<a class="headerlink" href="#jenis-solusi-persamaan-linear" title="Link to this heading">#</a></h1>
+<section id="satu-solusi">
+<h2>Satu solusi<a class="headerlink" href="#satu-solusi" title="Link to this heading">#</a></h2>
+<p>(jika persamaan saling berpotongan pada satu titik)</p>
+<ul>
+<li><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    6X–3 = 21 untuk X
+    6X–3 = 21 
+    6X   = 24 (tambah 3 di dua sisi)
+    X    = 4  (bagi kedua sisi dengan 6 )
+    Jadi, 6X–3 = 21 memiliki satu solusi.
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="banyak-solusi">
+<h2>Banyak solusi<a class="headerlink" href="#banyak-solusi" title="Link to this heading">#</a></h2>
+<p>(jika persamaan menggambarkan garis atau bidang yang sama,sehingga ada banyak solusi)</p>
+<ul>
+<li><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    x + y = 6 
+    2x + 2y = 12 (keduanya bisa di bagi 2).dengan kedua 
+    persamaan tersebut sama,
+    kita bisa memilih nilai x secara bebas dan menghitung y
+    yang sesuai. 
+    x+y=6
+    kita bisa memilih nilai 𝑥 secara bebas, 
+    dan kemudian menghitung nilai 
+    y yang sesuai. 
+    jika x = 1 maka y = 5 
+         x = 2 maka y = 4 
+         x = 3 maka y = 3
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="solusi-tak-terhingga">
+<h2>Solusi tak terhingga<a class="headerlink" href="#solusi-tak-terhingga" title="Link to this heading">#</a></h2>
+<p>(jika persamaan saling bertentangan, seperti dua garis yang sejajar tetapi tidak berpotongan)</p>
+<ul>
+<li><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    eq1: x+y = 2 
+    eq2: 2x+2y = 4
+    x + y = 2
+    y = 2 − x
+Jika x = 0 maka y = 2 - 0 = 2 sehingga (0.2)
+jika x = 1 maka y = 2 - 1 = 1 sehingga (1.1)
+jika x = -1 maka y = 2-(-1) = 3 sehingga (-1.3)
+dan seterusnya.
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="metode-penyelesain-persamaan-linear">
+<h2>Metode Penyelesain Persamaan Linear<a class="headerlink" href="#metode-penyelesain-persamaan-linear" title="Link to this heading">#</a></h2>
+<section id="eliminasi">
+<h3>Eliminasi<a class="headerlink" href="#eliminasi" title="Link to this heading">#</a></h3>
+<p>metode eliminasi yaitu dengan menghapus atau menghilangkan salah satu variabel dalam persamaan tersebut.</p>
+<p>Contoh, variabel dalam persamaan adalah a dan b, untuk mencari nilai a, yaitu menghilangkan b terlebih dahulu, begitu juga sebaliknya.</p>
+<p>langkah - langkah eliminasi dalam persamaan linear:
+1.Pilih variabel yang akan dieliminasi
+2.Samakan koefisien variabel yang akan dieliminasi
+Eliminasi variabel
+3.Selesaikan persamaan satu variabel
+4.Ulangi proses untuk variabel kedua</p>
+</section>
+</section>
+<section id="eliminasi-gaus">
+<h2>Eliminasi Gaus<a class="headerlink" href="#eliminasi-gaus" title="Link to this heading">#</a></h2>
+<p>metode untuk operasi nilai-nilai dalam matriks, yang membuat matriks lebih sederhana lagi. dengan cara menghilangkan atau mengurangi jumlah variabel, untuk mendapatkan nilai variabel bebas,biasanya dalam bentuk matriks eselon baris.</p>
+<p>langkah - langkah eliminasi gauss dalam persamaan linear
+1.Tulis Sistem Persamaan dalam Bentuk Matriks Augmented
+2.Selesaikan Matriks untuk Mendapatkan Nilai Variabel (Backward Substitution)
+3.Ulangi Proses untuk Baris Berikutnya (Untuk Membentuk Diagonal Utama)</p>
+</section>
+<section id="solusi-grafik">
+<h2>Solusi Grafik<a class="headerlink" href="#solusi-grafik" title="Link to this heading">#</a></h2>
+<p>Metode Solusi Grafik adalah cara untuk menyelesaikan sistem persamaan linear dengan menggambarkan setiap persamaan dalam sistem sebagai garis lurus dalam bidang koordinat, dan mencari titik potong (interseksi) dari garis-garis.
+2x+3y=6
+x−y=1</p>
+<iframe src="https://www.geogebra.org/calculator/cks9muga?embed" width="800" height="600" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Komputasi Aljabar Linear</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Definisi Sistem Persamaan Linear</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#jenis-sistem-persamaan-linear">Jenis Sistem Persamaan Linear</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#persamaan-linear-satu-variabel">1. Persamaan Linear Satu variabel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#persamaan-linear-dua-variabel">2. Persamaan Linear Dua variabel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#persamaan-linear-tiga-variabel">3. Persamaan Linear Tiga variabel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ciri-ciri-sistem-persamaan-linear">Ciri-Ciri Sistem Persamaan Linear</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#jenis-solusi-persamaan-linear">Jenis Solusi Persamaan Linear</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#satu-solusi">Satu solusi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#banyak-solusi">Banyak solusi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi-tak-terhingga">Solusi tak terhingga</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metode-penyelesain-persamaan-linear">Metode Penyelesain Persamaan Linear</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminasi">Eliminasi</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminasi-gaus">Eliminasi Gaus</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi-grafik">Solusi Grafik</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dewi Geizya
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
