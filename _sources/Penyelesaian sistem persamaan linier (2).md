@@ -24,6 +24,7 @@ Eliminasi Gauss yaitu metode yang digunakan untuk menyelesaikan sistem persamaan
 ### contoh soal 1 
 
 selesaikan dengan menggunakan eliminasi gauss
+
 $$
 \begin{array}{cc}
 x_1+2x_2+3x_3z&=6\\
@@ -33,13 +34,15 @@ x_3-x_24&=2
 $$
 
 Selesaikan dengan menggunakan eliminasi Gauss
+
 $$
 \begin{array}{cc}
 x_1+2x_2+3x_3&=6\\
 2x_1+4x_2+6x_3&=12\\
 x_2+x_3&=2
 \end{array}
-$$
+$$ 
+
 jawab:
 $$
 \begin{bmatrix}
@@ -66,18 +69,21 @@ $$
 \end{bmatrix}
 \quad
 $$
+
 $$
 \begin{array}{cc}
 x_2+x_3 = 2\\
 x_2 = 2 - x_3\\
 \end{array}
 $$
+
 $$
 \begin{array}{cc}
 x_1+2x_2+3x_3 = 6\\
 x_2 = 2 - x_3 \\
 \end{array}
 $$
+
 $$
 \begin{array}{cc}
 x_1 + 2(2-x_3)+3x_3 = 6\\
@@ -86,6 +92,7 @@ x_1+4+x_3\\
 x_1=2-x_3
 \end{array}
 $$
+
 $$
 \begin{array}{cc}
 x_1 = 2-x_3\\
@@ -105,7 +112,9 @@ x_1+x_2+x_3&=3\\
 x_1+2x_2&=3
 \end{array}
 $$
-jawab: 
+
+jawab:
+
 $$
 \begin{bmatrix}
 1 & 1 & 1 & | &3\\
@@ -114,6 +123,7 @@ $$
 \end{bmatrix}
 \quad
 $$
+
 $$
 \begin{bmatrix}
 1 & 1 & 1 & | &3\\
@@ -122,6 +132,7 @@ $$
 \end{bmatrix}
 \quad
 $$
+
 $$
 \begin{bmatrix}
 1 & 1 & 1 & | &3\\
@@ -130,18 +141,21 @@ $$
 \end{bmatrix}
 \quad
 $$
+
 $$
 \begin{array}{cc}
 -x_3=-1/2\\
 x_3=1/2
 \end{array}
 $$
+
 $$
 \begin{array}{cc}
 -2x_2=-1\\
 x_2=1/2
 \end{array}
 $$
+
 $$
 \begin{array}{cc}
 x_1+x_2+x_3=3\\
@@ -150,12 +164,15 @@ x_1+1=3\\
 x_1=2
 \end{array}
 $$
+
 hasil akhirnya adalah:
+
 $$
 \begin{array}{cc}
 (x_1+x_2+x_3)=(2,1/2,1/2)
 \end{array}
 $$
+
 jadi, sistem ini memiliki solusi tunggal.
 
 
@@ -167,7 +184,9 @@ $$
 x_1+x_2&=2
 \end{array}
 $$
+
 jawab:
+
 $$
 \begin{bmatrix}
 2 & 2 &  | &4\\
@@ -175,6 +194,7 @@ $$
 \end{bmatrix}
 \quad
 $$
+
 $$
 \begin{bmatrix}
 1 & 1 &  | &2\\
@@ -182,6 +202,7 @@ $$
 \end{bmatrix}
 \quad
 $$
+
 $$
 \begin{array}{cc}
 x_1+x_2=2\\
@@ -189,11 +210,13 @@ x_1=2-x_2\\
 x_2=x_2
 \end{array}
 $$
+
 $$
 \begin{array}{cc}
 (x_1,x_2)=(2-x_2,x_2)
 \end{array}
 $$
+
 $$
 \begin{array}{cc}
 jika(x_2=0),maka((x_1,x_2)=(2,0))\\
@@ -201,6 +224,7 @@ jika(x_2=1),maka((x_1,x_2)=(1,1))\\
 jika(x_2=2),maka((x_1,x_2)=(0,2))
 \end{array}
 $$
+
 maka sistem ini memiliki tak hingga banyak solusi.
 
 ### contoh soal 4
@@ -211,6 +235,7 @@ x_1+x_2&=5\\
 x_1+2x_3&=6
 \end{array}
 $$
+
 jawab:
 $$
 \begin{bmatrix}
@@ -219,6 +244,7 @@ $$
 \end{bmatrix}
 \quad
 $$
+
 $$
 \begin{bmatrix}
 1 & 1 &| &5\\
@@ -226,6 +252,7 @@ $$
 \end{bmatrix}
 \quad
 $$
+
 $$
 \begin{array}{cc}
 x_2=1\\
@@ -233,10 +260,13 @@ x_1+1=5\\
 x_1=4
 \end{array}
 $$
+
 jadi:
+
 $$
 \begin{array}{cc}
 (x_1,x_2)=(4,1)
 \end{array}
 $$
+
 maka, sistem ini memiliki solusi tunggal.
