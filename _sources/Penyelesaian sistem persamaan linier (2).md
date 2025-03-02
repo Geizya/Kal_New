@@ -44,6 +44,8 @@ x_2+x_3&=2
 $$ 
 
 jawab:
+
+
 $$
 \begin{bmatrix}
 1 & 2 & 3 & | &6\\
@@ -237,6 +239,8 @@ x_1+2x_3&=6
 $$
 
 jawab:
+
+
 $$
 \begin{bmatrix}
 1 & 1 &| &5\\
