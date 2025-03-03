@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Komputasi Aljabar Linear &#8212; KAL</title>
+    <title>Penyelesaian sistem persamaan linier &#8212; KAL</title>
   
   
   
@@ -62,10 +62,10 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Penyelesaian sistem persamaan linier';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Definisi Sistem Persamaan Linear" href="Definisi%20Sistem%20Persamaan%20Linear.html" />
+    <link rel="prev" title="Definisi Sistem Persamaan Linear" href="Definisi%20Sistem%20Persamaan%20Linear.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -117,8 +117,6 @@
       
       
       
-        
-      
       <dialog id="pst-primary-sidebar-modal"></dialog>
       <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
@@ -138,7 +136,7 @@
     
   
 
-<a class="navbar-brand logo" href="#">
+<a class="navbar-brand logo" href="intro.html">
   
   
   
@@ -165,17 +163,17 @@
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
                     Komputasi Aljabar Linear
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Definisi%20Sistem%20Persamaan%20Linear.html">Definisi Sistem Persamaan Linear</a></li>
 
 
-<li class="toctree-l1"><a class="reference internal" href="Penyelesaian%20sistem%20persamaan%20linier.html">Penyelesaian sistem persamaan linier</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Penyelesaian sistem persamaan linier</a></li>
 </ul>
 
     </div>
@@ -252,7 +250,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FPenyelesaian sistem persamaan linier.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -282,7 +280,7 @@
       
       
       
-      <li><a href="_sources/intro.md" target="_blank"
+      <li><a href="_sources/Penyelesaian sistem persamaan linier.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -345,7 +343,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -356,11 +356,26 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Komputasi Aljabar Linear</h1>
+    <h1>Penyelesaian sistem persamaan linier</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operasi-baris-elementer">operasi baris elementer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminasi-gaus">eliminasi gaus</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-soal-1">contoh soal 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-soal-2">contoh soal 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-soal-3">contoh soal 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-soal-4">contoh soal 4</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -370,10 +385,267 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="komputasi-aljabar-linear">
-<h1>Komputasi Aljabar Linear<a class="headerlink" href="#komputasi-aljabar-linear" title="Link to this heading">#</a></h1>
-<div class="toctree-wrapper compound">
-</div>
+  <section class="tex2jax_ignore mathjax_ignore" id="penyelesaian-sistem-persamaan-linier">
+<h1>Penyelesaian sistem persamaan linier<a class="headerlink" href="#penyelesaian-sistem-persamaan-linier" title="Link to this heading">#</a></h1>
+<section id="operasi-baris-elementer">
+<h2>operasi baris elementer<a class="headerlink" href="#operasi-baris-elementer" title="Link to this heading">#</a></h2>
+<p>operasi baris elementer(OBE)operasi yang dilakukan pada baris suatu matriks untuk mengubahnya menjadi bentuk yang lebih sederhana. OBE dapat digunakan untuk menyelesaikan sistem persamaan linear (SPL) dan menentukan invers matriks.</p>
+<p>ciri ciri obe:
+1.Mengubah Matriks Tanpa Mengubah Solusi Sistem
+2.Dapat Dibalik (Inversibel)
+3.Matriks Tidak Kehilangan Struktur</p>
+<p>jenis obe:
+1.Pertukaran Baris dengan Menukar posisi dua baris dalam matriks.
+2.Pengalian Baris dengan Mengalikan setiap elemen dalam suatu baris dengan konstanta non-nol.
+3.Penjumlahan Baris yaitu Menambahkan kelipatan dari satu baris ke baris lainnya.</p>
+</section>
+<section id="eliminasi-gaus">
+<h2>eliminasi gaus<a class="headerlink" href="#eliminasi-gaus" title="Link to this heading">#</a></h2>
+<p>Eliminasi Gauss yaitu metode yang digunakan untuk menyelesaikan sistem persamaan linier.dengan metode ini untuk mengubah sistem persamaan linier menjadi bentuk yang lebih sederhana/dalam bentuk matriks eselon baris sehingga dapat ditemukan solusinya dengan lebih mudah.Metode eliminasi Gauss dilakukan melalui serangkaian operasi baris elementer pada matriks koefisien dari sistem persamaan linier.</p>
+<section id="contoh-soal-1">
+<h3>contoh soal 1<a class="headerlink" href="#contoh-soal-1" title="Link to this heading">#</a></h3>
+<p>selesaikan dengan menggunakan eliminasi gauss</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{cc}
+x_1+2x_2+3x_3z&amp;=6\\
+2x_1+4_2+6x_12&amp;=4\\
+x_3-x_24&amp;=2
+\end{array}
+\end{split}\]</div>
+<p>Selesaikan dengan menggunakan eliminasi Gauss</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{cc}
+x_1+2x_2+3x_3&amp;=6\\
+2x_1+4x_2+6x_3&amp;=12\\
+x_2+x_3&amp;=2
+\end{array}
+\end{split}\]</div>
+<p>jawab:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix}
+1 &amp; 2 &amp; 3 &amp; | &amp;6\\
+2 &amp; 4 &amp; 6 &amp; | &amp;12\\
+0 &amp; 1 &amp; 1 &amp; | &amp;2\\
+\end{bmatrix}
+\quad
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix}
+1 &amp; 2 &amp; 3 &amp; | &amp;6\\
+0 &amp; 0 &amp; 0 &amp; | &amp;0\\
+0 &amp; 1 &amp; 1 &amp; | &amp;2\\
+\end{bmatrix}
+\quad
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix}
+1 &amp; 2 &amp; 3 &amp; | &amp;6\\
+0 &amp; 1 &amp; 1 &amp; | &amp;2\\
+\end{bmatrix}
+\quad
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{cc}
+x_2+x_3 = 2\\
+x_2 = 2 - x_3\\
+\end{array}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{cc}
+x_1+2x_2+3x_3 = 6\\
+x_2 = 2 - x_3 \\
+\end{array}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{cc}
+x_1 + 2(2-x_3)+3x_3 = 6\\
+x_1 + 4-2x_3+3x_3 = 6\\
+x_1+4+x_3\\
+x_1=2-x_3
+\end{array}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{cc}
+x_1 = 2-x_3\\
+x_2=2-x_3\\
+x_3=x_3
+\end{array}
+\end{split}\]</div>
+<p>jadi hanya ada satu variabel maka sistem memiliki, tak hingga banyak solusi</p>
+</section>
+<section id="contoh-soal-2">
+<h3>contoh soal 2<a class="headerlink" href="#contoh-soal-2" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{cc}
+x_1+x_2+x_3&amp;=3\\
+2x_1+2x_3&amp;=5\\
+x_1+2x_2&amp;=3
+\end{array}
+\end{split}\]</div>
+<p>jawab:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix}
+1 &amp; 1 &amp; 1 &amp; | &amp;3\\
+2 &amp; 0 &amp; 2 &amp; | &amp;5\\
+1 &amp; 2 &amp; 0 &amp; | &amp;3\\
+\end{bmatrix}
+\quad
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix}
+1 &amp; 1 &amp; 1 &amp; | &amp;3\\
+0 &amp; -2 &amp; 0 &amp; | &amp;-1\\
+0 &amp; 1 &amp; -1&amp; | &amp;0\\
+\end{bmatrix}
+\quad
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix}
+1 &amp; 1 &amp; 1 &amp; | &amp;3\\
+0 &amp; -2 &amp; 0 &amp; | &amp;-1\\
+0 &amp; 0 &amp; -1 &amp; | &amp;-1/2\\
+\end{bmatrix}
+\quad
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{cc}
+-x_3=-1/2\\
+x_3=1/2
+\end{array}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{cc}
+-2x_2=-1\\
+x_2=1/2
+\end{array}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{cc}
+x_1+x_2+x_3=3\\
+x_1+1/2+1/2=3\\
+x_1+1=3\\
+x_1=2
+\end{array}
+\end{split}\]</div>
+<p>hasil akhirnya adalah:</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{array}{cc}
+(x_1+x_2+x_3)=(2,1/2,1/2)
+\end{array}
+\]</div>
+<p>jadi, sistem ini memiliki solusi tunggal.</p>
+</section>
+<section id="contoh-soal-3">
+<h3>contoh soal 3<a class="headerlink" href="#contoh-soal-3" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{cc}
+2x_1+2x_2&amp;=4\\
+x_1+x_2&amp;=2
+\end{array}
+\end{split}\]</div>
+<p>jawab:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix}
+2 &amp; 2 &amp;  | &amp;4\\
+1 &amp; 1 &amp;  | &amp;2\\
+\end{bmatrix}
+\quad
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix}
+1 &amp; 1 &amp;  | &amp;2\\
+1 &amp; 1 &amp;  | &amp;2\\
+\end{bmatrix}
+\quad
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{cc}
+x_1+x_2=2\\
+x_1=2-x_2\\
+x_2=x_2
+\end{array}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[
+\begin{array}{cc}
+(x_1,x_2)=(2-x_2,x_2)
+\end{array}
+\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{cc}
+jika(x_2=0),maka((x_1,x_2)=(2,0))\\
+jika(x_2=1),maka((x_1,x_2)=(1,1))\\
+jika(x_2=2),maka((x_1,x_2)=(0,2))
+\end{array}
+\end{split}\]</div>
+<p>maka sistem ini memiliki tak hingga banyak solusi.</p>
+</section>
+<section id="contoh-soal-4">
+<h3>contoh soal 4<a class="headerlink" href="#contoh-soal-4" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{cc}
+x_1+x_2&amp;=5\\
+x_1+2x_3&amp;=6
+\end{array}
+\end{split}\]</div>
+<p>jawab:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix}
+1 &amp; 1 &amp;| &amp;5\\
+0 &amp; 2 &amp;| &amp;6\\
+\end{bmatrix}
+\quad
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix}
+1 &amp; 1 &amp;| &amp;5\\
+0 &amp; 1 &amp;| &amp;1\\
+\end{bmatrix}
+\quad
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{cc}
+x_2=1\\
+x_1+1=5\\
+x_1=4
+\end{array}
+\end{split}\]</div>
+<p>jadi:</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{array}{cc}
+(x_1,x_2)=(4,1)
+\end{array}
+\]</div>
+<p>maka, sistem ini memiliki solusi tunggal.</p>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -406,14 +678,14 @@
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="right-next"
+    <a class="left-prev"
        href="Definisi%20Sistem%20Persamaan%20Linear.html"
-       title="next page">
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-subtitle">previous</p>
         <p class="prev-next-title">Definisi Sistem Persamaan Linear</p>
       </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -421,6 +693,29 @@
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operasi-baris-elementer">operasi baris elementer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminasi-gaus">eliminasi gaus</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-soal-1">contoh soal 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-soal-2">contoh soal 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-soal-3">contoh soal 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-soal-4">contoh soal 4</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
