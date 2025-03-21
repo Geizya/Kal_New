@@ -180,6 +180,7 @@
 
 
 
+
 </ul>
 
     </div>
@@ -381,6 +382,7 @@
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#penjumlahan-metriks">1. Penjumlahan Metriks</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pengurangan-metriks">2. Pengurangan Metriks</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#perkalian-metriks">3. Perkalian Metriks</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#penyelesain-inverst-dengan-obe">Penyelesain inverst dengan OBE</a></li>
 </ul>
 
             </nav>
@@ -774,6 +776,178 @@ Hasil (A x B) x C:
 </div>
 </div>
 </section>
+<section id="penyelesain-inverst-dengan-obe">
+<h1>Penyelesain inverst dengan OBE<a class="headerlink" href="#penyelesain-inverst-dengan-obe" title="Link to this heading">#</a></h1>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+-7x_1-6x_2-12x_3=-33\\
+5x_1+5x_2+7x_3=24\\
+x_1+4x_3=5
+\end{split}\]</div>
+<p>Penyelesaian:</p>
+<ol class="arabic simple">
+<li><p>Tulis dalam bentuk matrik</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[Ax=b\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{equation*}
+A=
+\begin{bmatrix}
+-7&amp;-6&amp;-12\\
+5&amp;5&amp;7\\
+1&amp;0&amp;4
+\end{bmatrix}
+b=
+\begin{bmatrix}
+-33\\
+24\\
+5
+\end{bmatrix}
+\end{equation*}
+\end{split}\]</div>
+<ol class="arabic simple" start="2">
+<li><p>menyusun matrik argumen, menubah bagian kiri menjadi matrtik I segingga bagian kanan berubah menjdi A invers.</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[[A][I]\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{equation*}
+\begin{bmatrix}
+-7&amp;-6&amp;-12 |1&amp;0&amp;0\\
+5&amp;5&amp;7 |0&amp;1&amp;0\\
+1&amp;0&amp;4 |0&amp;0&amp;1
+\end{bmatrix}
+\end{equation*}
+\end{split}\]</div>
+<ol class="arabic simple" start="3">
+<li><p>bagi baris pertama dengan -7, agar elemen (1,1) menjadi 1</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{equation*}
+\begin{bmatrix}
+1&amp;\frac{6}{7}&amp;-\frac{12}{7} |-\frac{1}{7}&amp;0&amp;0\\
+5&amp;5&amp;7 |0&amp;1&amp;0\\
+1&amp;0&amp;4 |0&amp;0&amp;1
+\end{bmatrix}
+\end{equation*}
+\end{split}\]</div>
+<ol class="arabic simple" start="4">
+<li><p>nol kan elemen di bawahnya menggunakan operasi:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[R_2 &lt;-R_2-5R_1\]</div>
+<div class="math notranslate nohighlight">
+\[R_3 &lt;-R_3-R_1\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{equation*}
+\begin{bmatrix}
+1&amp;\frac{6}{7}&amp;-\frac{12}{7} |-\frac{1}{7}&amp;0&amp;0\\
+0&amp;\frac{5}{7}&amp;-\frac{13}{7}|\frac{5}{7}&amp;1&amp;0\\
+0&amp;-\frac{6}{7}&amp;\frac{16}{7} |\frac{1}{7}&amp;0&amp;1
+\end{bmatrix}
+\end{equation*}
+\end{split}\]</div>
+<ol class="arabic simple" start="5">
+<li><p>ubah elemen (2,2) menjadi 1, dengan cara baris kedua di bagi 5/7</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[R_2 &lt;-R_2 \times \frac{7}{5}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{equation*}
+\begin{bmatrix}
+1&amp;\frac{6}{7}&amp;-\frac{12}{7} |-\frac{1}{7}&amp;0&amp;0\\
+0&amp;1&amp;-\frac{13}{5}|\frac{1}{5}&amp;\frac{7}{5}&amp;0\\
+0&amp;-\frac{6}{7}&amp;\frac{16}{7} |\frac{1}{7}&amp;0&amp;1
+\end{bmatrix}
+\end{equation*}
+\end{split}\]</div>
+<ol class="arabic simple" start="6">
+<li><p>nol kan elemen di atas dan bawah (2,2)
+menggunakan operasi:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[R_1&lt;-R_1-\frac{6}{7}R_2\]</div>
+<div class="math notranslate nohighlight">
+\[R_3&lt;-R_3-\frac{6}{7}R_2\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{equation*}
+\begin{bmatrix}
+1 &amp; 0 &amp; \frac{102}{35}|&amp; -\frac{13}{35} &amp; -\frac{6}{5} &amp; 0 \\
+0 &amp; 1 &amp; -\frac{13}{5} &amp;|\frac{1}{5} &amp; \frac{7}{5} &amp; 0 \\
+0 &amp; 0 &amp; \frac{26}{35} &amp;|\frac{13}{26} &amp; \frac{42}{26} &amp; 1
+\end{bmatrix}
+\end{equation*}
+\end{split}\]</div>
+<ol class="arabic simple" start="7">
+<li><p>ubah elemen (3,3) menjadi 1, dengan cara baris ketiga dibagi dengan 26/35</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[R_3&lt;-R_3 × \frac{35}{26}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{equation*}
+\begin{bmatrix}
+1 &amp; 0 &amp; \frac{102}{35}|&amp; -\frac{13}{35} &amp; -\frac{6}{5} &amp; 0 \\
+0 &amp; 1 &amp; -\frac{13}{5} &amp;|\frac{1}{5} &amp; \frac{7}{5} &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp;|\frac{13}{26} &amp; \frac{42}{26} &amp; \frac{35}{26}
+\end{bmatrix}
+\end{equation*}
+\end{split}\]</div>
+<ol class="arabic simple" start="8">
+<li><p>nol kan elemen diatas (3,3)</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[R_1 &lt;-R_1-\frac{102}{35}R_3\]</div>
+<div class="math notranslate nohighlight">
+\[R_2 &lt;-R_2+\frac{13}{5}R_3\]</div>
+<p>dipeoleh inversnya yaitu:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{equation*}
+A^{-1} =
+\begin{bmatrix}
+\frac{26}{35} &amp; \frac{102}{65} &amp; \frac{102}{91} \\
+-\frac{7}{5} &amp; \frac{13}{5} &amp; -\frac{35}{26} \\
+-\frac{13}{26} &amp; -\frac{42}{26} &amp; \frac{35}{26}
+\end{bmatrix}
+\end{equation*}
+\end{split}\]</div>
+<ol class="arabic simple" start="9">
+<li><p>kalikan A invers dengan b</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[x=A^{-}1b\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{equation*}
+\begin{bmatrix}
+x_1\\
+x_2\\
+x_3
+\end{bmatrix}=
+\begin{bmatrix}
+\frac{26}{35} &amp; \frac{102}{65} &amp; \frac{102}{91} \\
+-\frac{7}{5} &amp; \frac{13}{5} &amp; -\frac{35}{26} \\
+-\frac{13}{26} &amp; -\frac{42}{26} &amp; \frac{35}{26}
+\end{bmatrix}
+\begin{bmatrix}
+-33\\
+24\\
+5
+\end{bmatrix}
+\end{equation*}
+\end{split}\]</div>
+<p>hasil akhirnya adalah</p>
+<div class="math notranslate nohighlight">
+\[x_1=-1, x_2=4, x_3=2\]</div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -840,6 +1014,7 @@ Hasil (A x B) x C:
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#penjumlahan-metriks">1. Penjumlahan Metriks</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pengurangan-metriks">2. Pengurangan Metriks</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#perkalian-metriks">3. Perkalian Metriks</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#penyelesain-inverst-dengan-obe">Penyelesain inverst dengan OBE</a></li>
 </ul>
 
   </nav></div>
